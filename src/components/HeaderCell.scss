@@ -1,0 +1,16 @@
+@import 'styles/colors.scss';
+.header-cell {
+    /* font-family: 'Lobster', cursive;*/
+    /*font-family: 'Prosto One', cursive;*/
+    border-top: none;
+    border-left: $grey-border;
+    line-height: 2.5;
+    background-color: $primary-color-white;
+    color: $primary-color-blue;
+    font-size: $padding-medium;
+    padding: $padding-little $padding-medium;
+}
+
+.header-cell:first-child {
+    border-left: none;
+}

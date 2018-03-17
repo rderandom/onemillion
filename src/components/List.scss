@@ -1,0 +1,32 @@
+@import "styles/colors.scss";
+.list {
+    margin: auto;
+    height: 50rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 40rem;
+    font-size: $font-size-little;
+    margin-top: 5%;
+}
+
+.list--table {
+    border-collapse: collapse;
+    border: $grey-border;
+}
+
+.list--tbody {
+    line-height: 2.5;
+}
+
+.list--ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.list--loading {
+    width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -40rem;
+}
