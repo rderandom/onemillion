@@ -1,13 +1,12 @@
 import React from 'react';
 import InfiniteScroll from './InfiniteScroll';
-import Cell from './Cell';
-import HeaderCell from './HeaderCell';
+import Table from './Table';
 import { RingLoader } from 'react-spinners';
 import './List.scss';
+import PropTypes from 'prop-types';
 
 class List extends React.Component {
     render() {
-        const { list } = this.props;
         return (
             <div className="list">
                 <InfiniteScroll
@@ -23,26 +22,7 @@ class List extends React.Component {
                             loading={true}
                         />
                     </div>}>
-                    <table className="list--table">
-                        <thead>
-                            <tr>
-                                <HeaderCell>Id</HeaderCell>
-                                <HeaderCell>Genre</HeaderCell>
-                                <HeaderCell>Author</HeaderCell>
-                                <HeaderCell>Title</HeaderCell>
-                                <HeaderCell>Date</HeaderCell>
-                            </tr>
-                        </thead>
-                        <tbody className="list--tbody">
-                            {list.map(item => <tr key={item.id} className="list--tr">
-                                <Cell>{item.id}</Cell>
-                                <Cell>{item.genre}</Cell>
-                                <Cell>{item.author.name} ({item.author.gender})</Cell>
-                                <Cell>{item.title}</Cell>
-                                <Cell>{item.publishedDate}</Cell>
-                            </tr>)}
-                        </tbody>
-                    </table>
+                <Table books={this.props.list}/>>
                 </InfiniteScroll>
             </div>
         );
@@ -54,4 +34,8 @@ class List extends React.Component {
     }
 };
 
+List.propTypes = {
+    list: PropTypes.array,
+    fetchPage: PropTypes.function
+};
 export default List;

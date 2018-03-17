@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import store from './../redux/store';
 import { loadBooks, loadVisibleBooks } from './../redux/actions';
 import List from './List';
+import PropTypes from 'prop-types';
 
 let currentChunk;
 const RECORDS_BY_PAGE = 50,
@@ -26,6 +27,7 @@ class BooksContainer extends React.Component {
   }
 }
 
+
 const mapStateToProps = (state) => {
   return {
     visibleBooks: state.visibleBooks,
@@ -35,7 +37,10 @@ const mapStateToProps = (state) => {
 
 const connector = connect(mapStateToProps)(BooksContainer);
 export default connector;
-
+connector.propTypes = {
+  visibleBooks: PropTypes.array,
+  hasMore: PropTypes.bool
+};
 
 const loadFromStore = (wantedEnd, store) => {
   store.dispatch(loadVisibleBooks(store.getState().books.list.slice(0, wantedEnd)));

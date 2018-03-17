@@ -1,0 +1,9 @@
+@import "./../styles/variables.scss";
+.table {
+    border-collapse: collapse;
+    border: $grey-border;
+}
+
+.table--tbody {
+    line-height: 2.5;
+}
