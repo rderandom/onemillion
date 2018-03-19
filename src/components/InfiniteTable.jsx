@@ -1,14 +1,14 @@
 import React from 'react';
-import InfiniteScroll from './InfiniteScroll';
+import InfiniteScroll from 'react-infinite-scroller';
 import Table from './Table';
-import { RingLoader } from 'react-spinners';
-import './List.scss';
+import { PropagateLoader } from 'react-spinners';
+import './InfiniteTable.scss';
 import PropTypes from 'prop-types';
 
-class List extends React.Component {
+class InfiniteTable extends React.Component {
     render() {
         return (
-            <div className="list">
+            <div className="infinite-table">
                 <InfiniteScroll
                     pageStart={1}
                     loadMore={this.props.fetchPage}
@@ -16,13 +16,13 @@ class List extends React.Component {
                     initialLoad={false}
                     useWindow={false}
                     threshold={300}
-                    loader={<div className='list--loading'>
-                        <RingLoader
-                            color={'#000000'}
+                    loader={<div className='infinite-table--loading'>
+                        <PropagateLoader
+                            color={'#698C8B'}
                             loading={true}
                         />
                     </div>}>
-                <Table books={this.props.list}/>>
+                    <Table books={this.props.list} />>
                 </InfiniteScroll>
             </div>
         );
@@ -34,8 +34,8 @@ class List extends React.Component {
     }
 };
 
-List.propTypes = {
+InfiniteTable.propTypes = {
     list: PropTypes.array,
-    fetchPage: PropTypes.function
+    fetchPage: PropTypes.func
 };
-export default List;
+export default InfiniteTable;

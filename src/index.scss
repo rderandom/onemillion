@@ -8,15 +8,15 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: $padding-medium;
+    width: 0.9rem;
 }
 
 ::-webkit-scrollbar-track {
-    background: black;
+    background: lightgray;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: $secondary-color-grey;
 }
 
 ::-webkit-scrollbar-thumb:hover {
