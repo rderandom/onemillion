@@ -6,7 +6,9 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: $primary-color-white;
 }
-
+*{
+    outline: none;
+}
 ::-webkit-scrollbar {
     width: 0.9rem;
 }
@@ -21,4 +23,9 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: $secondary-color-grey;
+}
+
+h2{
+    text-align: center;
+    padding: 2.4rem;
 }

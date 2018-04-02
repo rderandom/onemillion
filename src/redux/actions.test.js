@@ -1,4 +1,4 @@
-import { LOAD_BOOKS, LOAD_VISIBLE_BOOKS, loadBooks, loadVisibleBooks } from './actions'
+import { LOAD_BOOKS, LOAD_VISIBLE_BOOKS, loadBooks, loadVisibleBooks } from './actions';
 
 describe('|| actions', () => {
   it('should create an action to load books', () => {

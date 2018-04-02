@@ -1,22 +1,30 @@
 import { combineReducers } from 'redux';
-import { LOAD_BOOKS, LOAD_VISIBLE_BOOKS } from './actions';
+import { LOAD_BOOKS, SCROLL_BOOKS, SET_IS_LOADING } from './actions';
 
 const books = (state = { list: [] }, action) => {
-    if (action.type === LOAD_BOOKS) {
-        if (state.list.length) {
-            return { ...state, list: state.list.concat(action.books.list) };
-        } else {
-            return { ...state, list: action.books.list };
+    switch (action.type) {
+        case LOAD_BOOKS: {
+            if (state.list.length) {
+                const newArray = [...state.list];
+                for (let index = 0; index < action.newState.list.length; index++) {
+                    const newBook = action.newState.list[index];
+                    newArray[newBook.id] = newBook;
+                }
+                return { ...state, ...action.newState, list: newArray };
+            } else {
+                return { ...state, ...action.newState };
+            }
         }
-    };
-    return state;
-}
-const visibleBooks = (state = [], action) => {
-    if (action.type === LOAD_VISIBLE_BOOKS) {
-        return action.list;
+        case SCROLL_BOOKS: {
+            return { ...state, ...action.newState };
+        }
+        case SET_IS_LOADING: {
+            return { ...state, loading: action.isLoading };
+        }
+        default:
+            return state;
     }
-    return state;
-};
+}
 
-const rootReducer = combineReducers({ books, visibleBooks });
+const rootReducer = combineReducers({ books });
 export default rootReducer;

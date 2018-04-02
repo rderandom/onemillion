@@ -1,9 +1,15 @@
 export const LOAD_BOOKS = 'LOAD_BOOKS';
-export const LOAD_VISIBLE_BOOKS = 'LOAD_VISIBLE_BOOKS';
-export const loadBooks = (books) => {
-    return { type: LOAD_BOOKS, books }
+export const SCROLL_BOOKS = 'SCROLL_BOOKS';
+export const SET_IS_LOADING = 'SET_IS_LOADING';
+
+
+export const loadBooks = (newState) => {
+    return { type: LOAD_BOOKS, newState }
 }
-export const loadVisibleBooks = (list) => {
-    return { type: LOAD_VISIBLE_BOOKS, list }
+export const scrollBooks = (newState) => {
+    return { type: SCROLL_BOOKS, newState }
+}
+export const setIsLoading = (isLoading) => {
+    return { type: SET_IS_LOADING, isLoading }
 }
 

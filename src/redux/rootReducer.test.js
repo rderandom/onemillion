@@ -1,5 +1,5 @@
 import rootReducer from './rootReducer';
-import { LOAD_BOOKS, LOAD_VISIBLE_BOOKS } from './actions';
+import { LOAD_BOOKS } from './actions';
 
 describe('|| rootReducer', () => {
     const EMPTY_STATE = {

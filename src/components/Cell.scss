@@ -1,9 +1,0 @@
-@import "./../styles/variables.scss";
-.cell {
-    border-top: $grey-border;
-    padding: $padding-little $padding-medium;
-}
-
-.cell:first-child {
-    border-left: none;
-}

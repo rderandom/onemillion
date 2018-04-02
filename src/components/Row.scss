@@ -1,0 +1,24 @@
+.row{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    div{
+        padding-left: 1rem;
+    }
+}
+
+.row--id{
+    width: 5%;
+}
+.row--genre{
+    width: 10%;
+}
+.row--author{
+    width: 35%;
+}
+.row--title{
+    width: 40%;
+}
+.row--date{
+    width: 10%;  
+}

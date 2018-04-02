@@ -1,4 +1,6 @@
 @import "./../styles/variables.scss";
+@import "./../styles/colors.scss";
+
 .infinite-table {
     margin: auto;
     height: 30rem;
@@ -9,10 +11,15 @@
     margin-top: 5%;
 }
 
-.infinite-table--loading{
-    width: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: -40rem;
+.span__loading{
+    color: $secondary-color-grey;
+}
+.ReactVirtualized__List{
+    margin: auto;
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
