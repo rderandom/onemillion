@@ -17,6 +17,6 @@ The application uses Node to build its deployable artifact. If you do not have N
 Once you have Node installed, go to the project's directory from the command line and execute:
 ```
 npm install
-yarn run start
+node_modules\.bin\yarn run start
 ```
 Now you should be able to see the application navigating to [http://localhost:3000](http://localhost:3000).

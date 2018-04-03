@@ -10,13 +10,18 @@ class Casumo extends React.Component {
     }
     componentDidMount() {
         document.getElementsByClassName('ReactVirtualized__List')[0].onscroll = (ev) => {
-            if (ev.target.scrollTop > scroll && scroll < 337) {
-                casumoPosition += 3;
+            const top = document.getElementById('casumo').style.top.split("px")[0];
+            if (ev.target.scrollTop > scroll ) {
+                if(top <= (window.innerHeight-300-30)){
+                     casumoPosition += 3;   
+                }
             } else {
-                casumoPosition -= 3;
+                if(top >= 50){
+                    casumoPosition -= 3;                    
+                }
             }
             document.getElementById('casumo').style.top = casumoPosition + 'px';
-
+            scroll = ev.target.scrollTop;
         };
     }
 }
