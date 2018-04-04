@@ -2,13 +2,14 @@
 @import "./../styles/colors.scss";
 
 .infinite-table {
+    position: absolute;
     margin: auto;
-    height: 30rem;
-    overflow: hidden;
-    overflow-y: scroll;
-    width: 40rem;
-    font-size: $font-size-little;
-    margin-top: 5%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 539px;
+    width: 900px;
 }
 
 .span__loading{

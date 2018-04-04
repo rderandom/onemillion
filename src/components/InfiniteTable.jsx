@@ -45,7 +45,7 @@ const InfiniteTable = function ({
   }
 
   return (
-    <section>
+    <section className="infinite-table">
       <TableHeader />
       <div className="loader">
         <RingLoader
@@ -60,8 +60,8 @@ const InfiniteTable = function ({
         {({ onRowsRendered, registerChild }) => (
           <List
             rowCount={TOTAL_RECORDS}
-            rowHeight={35}
-            height={400}
+            rowHeight={30}
+            height={500}
             width={900}
             ref={registerChild}
             onRowsRendered={onRowsRendered}

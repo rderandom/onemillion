@@ -8,7 +8,7 @@ const books = (state = { list: [] }, action) => {
                 const newArray = [...state.list];
                 for (let index = 0; index < action.newState.list.length; index++) {
                     const newBook = action.newState.list[index];
-                    newArray[newBook.id] = newBook;
+                    newArray[newBook.id - 1] = newBook;
                 }
                 return { ...state, ...action.newState, list: newArray };
             } else {

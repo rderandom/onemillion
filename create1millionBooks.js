@@ -62,7 +62,7 @@ const generateBook = (index) => {
 
 const generateBooks = () => {
     const books = [], CHUNK_SIZE = 1000;
-    for (let index = 0; index < 1000000; index++) {
+    for (let index = 0; index <= 1000000; index++) {
         let pageNumber = Math.floor(index / CHUNK_SIZE);
 
         if (index !== 0 && index % CHUNK_SIZE === 0) {
@@ -76,7 +76,7 @@ const generateBooks = () => {
             books.length = [];
         }
         const bookIndex = pageNumber ? index % (pageNumber * CHUNK_SIZE) : index;
-        books[bookIndex] = generateBook(index);
+        books[bookIndex] = generateBook(index + 1);
     }
     return books;
 }
