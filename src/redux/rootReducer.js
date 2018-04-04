@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { LOAD_BOOKS, SCROLL_BOOKS, SET_IS_LOADING } from './actions';
+import { LOAD_BOOKS, SET_IS_LOADING } from './actions';
 
 const books = (state = { list: [] }, action) => {
     switch (action.type) {
@@ -14,9 +14,6 @@ const books = (state = { list: [] }, action) => {
             } else {
                 return { ...state, ...action.newState };
             }
-        }
-        case SCROLL_BOOKS: {
-            return { ...state, ...action.newState };
         }
         case SET_IS_LOADING: {
             return { ...state, loading: action.isLoading };

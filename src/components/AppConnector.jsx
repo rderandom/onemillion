@@ -37,17 +37,14 @@ const loadPage = (options) => {
         //let's see if we can get the requested
         //data from there
         const stopIndexFound = store.getState().books.list.find((book) => book && book.id === stopIndex);
-        const startIndexFound = store.getState().books.list.find((book) => book && book.id === startIndex);
-        if (stopIndexFound && startIndexFound) {
-            console.log("stopIndexFound && startIndexFound");
+
+        //We must fetch new records
+        if (stopIndexFound) {
+            pageToFetch = 1 + Math.floor(startIndex / RECORDS_PER_ROW);
         } else {
-            //We must fetch new records
-            if (stopIndexFound) {
-                pageToFetch = 1 + Math.floor(startIndex / RECORDS_PER_ROW);
-            } else {
-                pageToFetch = 1 + Math.floor(stopIndex / RECORDS_PER_ROW);
-            }
+            pageToFetch = 1 + Math.floor(stopIndex / RECORDS_PER_ROW);
         }
+
     }
 
     //This promise will be resolved with the list of visible list
